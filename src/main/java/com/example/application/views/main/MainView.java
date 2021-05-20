@@ -7,6 +7,7 @@ import com.vaadin.flow.component.ComponentUtil;
 import com.vaadin.flow.component.applayout.AppLayout;
 import com.vaadin.flow.component.applayout.DrawerToggle;
 import com.vaadin.flow.component.avatar.Avatar;
+import com.vaadin.flow.component.html.Anchor;
 import com.vaadin.flow.component.html.Image;
 import com.vaadin.flow.component.html.H1;
 import com.vaadin.flow.component.orderedlayout.FlexComponent;
@@ -18,11 +19,9 @@ import com.vaadin.flow.component.tabs.TabsVariant;
 import com.vaadin.flow.router.RouterLink;
 import com.vaadin.flow.server.PWA;
 import com.vaadin.flow.theme.Theme;
-import com.vaadin.flow.router.Route;
 import com.vaadin.flow.router.PageTitle;
-import com.example.application.views.main.MainView;
 import com.example.application.views.dashboard.DashboardView;
-import com.example.application.views.productmanager.ProductManagerView;
+import com.example.application.views.productmaster.ProductMasterView;
 import com.example.application.views.stocklist.StockListView;
 import com.example.application.views.about.AboutView;
 
@@ -54,6 +53,11 @@ public class MainView extends AppLayout {
         viewTitle = new H1();
         layout.add(viewTitle);
         layout.add(new Avatar());
+
+        // Logout
+        Anchor logout = new Anchor("logout", "Log out"); // Creates a new Anchor (<a> tag) that links to '/logout'
+        layout.add(logout);
+
         return layout;
     }
 
@@ -68,7 +72,7 @@ public class MainView extends AppLayout {
         logoLayout.setId("logo");
         logoLayout.setAlignItems(FlexComponent.Alignment.CENTER);
         logoLayout.add(new Image("images/logo.png", "vaadin-stock-manager logo"));
-        logoLayout.add(new H1("vaadin-stock-manager"));
+        logoLayout.add(new H1("Stock Manager"));
         layout.add(logoLayout, menu);
         return layout;
     }
@@ -84,7 +88,7 @@ public class MainView extends AppLayout {
 
     private Component[] createMenuItems() {
         return new Tab[]{createTab("Dashboard", DashboardView.class),
-                createTab("Product Manager", ProductManagerView.class), createTab("Stock List", StockListView.class),
+                createTab("Product Master", ProductMasterView.class), createTab("Stock List", StockListView.class),
                 createTab("About", AboutView.class)};
     }
 
