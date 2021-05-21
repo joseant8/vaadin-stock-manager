@@ -21,6 +21,7 @@ public class LoginView extends VerticalLayout implements BeforeEnterObserver {
         setJustifyContentMode(JustifyContentMode.CENTER);
 
         login.setAction("login");
+        login.setForgotPasswordButtonVisible(false);  // not show link forgot password
 
         add(new H1("Stock Manager"), login);
     }

@@ -21,8 +21,8 @@ import com.vaadin.flow.server.PWA;
 import com.vaadin.flow.theme.Theme;
 import com.vaadin.flow.router.PageTitle;
 import com.example.application.views.dashboard.DashboardView;
-import com.example.application.views.productmaster.ProductMasterView;
-import com.example.application.views.stocklist.StockListView;
+import com.example.application.views.product.ProductMasterView;
+import com.example.application.views.stock.StockListView;
 import com.example.application.views.about.AboutView;
 
 /**
