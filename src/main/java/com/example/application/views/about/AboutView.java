@@ -1,5 +1,7 @@
 package com.example.application.views.about;
 
+import com.vaadin.flow.component.Html;
+import com.vaadin.flow.component.HtmlComponent;
 import com.vaadin.flow.component.Text;
 import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
@@ -16,6 +18,11 @@ public class AboutView extends VerticalLayout {
 
         this.setPadding(true);
         add(new Text("Welcome to Stock Manager"));
+
+        add(new HtmlComponent("br"));
+        add(new HtmlComponent("hr"));
+
+        add(new Text("Bienvenido a Stock Manager"));
     }
 
 }
